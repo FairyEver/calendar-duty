@@ -2,6 +2,13 @@ import { get } from 'lodash'
 
 export default {
   props: {
+    // 标题
+    title: {
+      type: String,
+      default: '',
+      required: false
+    },
+    // 注释 有的组件不支持
     label: {
       type: String,
       default: '',

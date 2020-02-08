@@ -15,7 +15,8 @@ import {
   Switch,
   Field,
   Cell,
-  CellGroup
+  CellGroup,
+  Divider
 } from 'vant'
 
 Vue.use(Tabbar)
@@ -26,6 +27,7 @@ Vue.use(Switch)
 Vue.use(Field)
 Vue.use(Cell)
 Vue.use(CellGroup)
+Vue.use(Divider)
 
 Vue.config.productionTip = false
 

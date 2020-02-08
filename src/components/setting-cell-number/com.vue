@@ -1,7 +1,7 @@
 <template>
   <van-field
     v-model="currentValue"
-    :label="label"
+    :label="title"
     type="digit"
     placeholder="数字"
     input-align="right"

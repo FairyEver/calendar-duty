@@ -1,5 +1,5 @@
 <template>
-  <van-cell :title="label" center>
+  <van-cell :title="title" :label="label" center>
     <van-switch
       v-model="currentValue"
       slot="right-icon"

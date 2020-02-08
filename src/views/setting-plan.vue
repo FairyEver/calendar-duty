@@ -5,17 +5,22 @@
 <template>
   <div class="setting-plan">
     <van-cell-group title="开关">
-      <setting-cell-switch label="开启" :path="`PLAN[${index}].ACTIVE`"/>
+      <setting-cell-switch title="开启" :path="`PLAN[${index}].ACTIVE`"/>
     </van-cell-group>
     <van-cell-group title="基础信息">
-      <setting-cell-input label="名称" :path="`PLAN[${index}].TITLE`"/>
-      <setting-cell-input label="日期" :path="`PLAN[${index}].START`"/>
-      <setting-cell-number label="周期" :path="`PLAN[${index}].INTERVAL`"/>
+      <setting-cell-input title="名称" :path="`PLAN[${index}].TITLE`"/>
+      <setting-cell-input title="日期" :path="`PLAN[${index}].START`"/>
+      <setting-cell-number title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">
-      <setting-cell-switch label="排除周六" :path="`PLAN[${index}].EXCLUDE_SATURDAY`"/>
-      <setting-cell-switch label="排除周日" :path="`PLAN[${index}].EXCLUDE_SUNDAY`"/>
-      <setting-cell-switch label="排除法定节假日" :path="`PLAN[${index}].EXCLUDE_HOLIDAY`"/>
+      <setting-cell-switch title="排除周六" :path="`PLAN[${index}].EXCLUDE_SATURDAY`"/>
+      <setting-cell-switch title="排除周日" :path="`PLAN[${index}].EXCLUDE_SUNDAY`"/>
+      <setting-cell-switch title="排除法定节假日" :path="`PLAN[${index}].EXCLUDE_HOLIDAY`"/>
+    </van-cell-group>
+    <van-divider dashed>提示</van-divider>
+    <van-cell-group class="is-mb-20">
+      <van-cell value="周六和周日不一定是法定节假日"/>
+      <van-cell value="法定节假日不仅包含周六和周日"/>
     </van-cell-group>
   </div>
 </template>

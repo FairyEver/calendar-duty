@@ -1,7 +1,7 @@
 <template>
   <van-field
     v-model="currentValue"
-    :label="label"
+    :label="title"
     placeholder="输入框内容右对齐"
     input-align="right"
     @blur="commit(currentValue)"
