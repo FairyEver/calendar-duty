@@ -1,0 +1,17 @@
+// 边距相关
+$sizes: (0, 5px, 10px, 15px, 20px);
+$sizes-name: (0, 5, 10, 15, 20);
+
+@for $index from 1 to 6 {
+  .is-m-#{nth($sizes-name, $index)} { margin: #{nth($sizes, $index)} !important; }
+  .is-mt-#{nth($sizes-name, $index)} { margin-top: #{nth($sizes, $index)} !important; }
+  .is-mr-#{nth($sizes-name, $index)} { margin-right: #{nth($sizes, $index)} !important; }
+  .is-mb-#{nth($sizes-name, $index)} { margin-bottom: #{nth($sizes, $index)} !important; }
+  .is-ml-#{nth($sizes-name, $index)} { margin-left: #{nth($sizes, $index)} !important; }
+
+  .is-p-#{nth($sizes-name, $index)} { padding: #{nth($sizes, $index)} !important; }
+  .is-pt-#{nth($sizes-name, $index)} { padding-top: #{nth($sizes, $index)} !important; }
+  .is-pr-#{nth($sizes-name, $index)} { padding-right: #{nth($sizes, $index)} !important; }
+  .is-pb-#{nth($sizes-name, $index)} { padding-bottom: #{nth($sizes, $index)} !important; }
+  .is-pl-#{nth($sizes-name, $index)} { padding-left: #{nth($sizes, $index)} !important; }
+}
