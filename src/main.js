@@ -32,8 +32,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: h => h(App),
-  created () {
-    this.$store.dispatch('RECALCULATION')
-  }
+  render: h => h(App)
 }).$mount('#app')

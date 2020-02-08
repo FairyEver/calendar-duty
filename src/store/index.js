@@ -51,9 +51,7 @@ export default new Vuex.Store({
           HIGHLIGHT_SHOW_HOLIDAY: true
         }
       }
-    },
-    // 任务计算结果
-    CACHE_PLAN: {}
+    }
   },
   getters: {
     /**
@@ -63,14 +61,6 @@ export default new Vuex.Store({
      */
     SETTING (state, getters, rootState, rootGetters) {
       return state.SETTING
-    },
-    /**
-     * @description 计算完的日期安排
-     * @example $store.getters['CACHE_PLAN']
-     * @example this.$store.getters['CACHE_PLAN']
-     */
-    CACHE_PLAN (state, getters, rootState, rootGetters) {
-      return state.CACHE_PLAN
     }
   },
   mutations: {
@@ -100,76 +90,14 @@ export default new Vuex.Store({
   },
   actions: {
     /**
-     * @description 重新计算日期设置
+     * @description description
      * @param {Object} context context
      * @param {Any} payload payload
-     * @example $store.dispatch('RECALCULATION')
-     * @example this.$store.dispatch('RECALCULATION')
+     * @example $store.dispatch('NAME')
+     * @example this.$store.dispatch('NAME')
      */
-    async RECALCULATION ({ state, rootState, commit, dispatch, getters, rootGetters }) {
-      const result = {}
-      /**
-       * @description 判断日期是否需要排除
-       * @param {Dayjs} day 日期
-       * @param {Object} setting 设置
-       * @returns {Boolean} is or not
-       */
-      function IS_EXCLUDE (day, setting = {}) {
-        if (setting.EXCLUDE_SATURDAY && isSaturday(day)) return true
-        if (setting.EXCLUDE_SUNDAY && isSunday(day)) return true
-        if (setting.EXCLUDE_HOLIDAY && isHoliday(day)) return true
-        return false
-      }
-      /**
-       * @description 计算一个日期
-       * @param {Object} param {Dayjs} min 最小日期
-       * @param {Object} param {Dayjs} max 最大日期
-       * @param {Object} param {Dayjs} day 当前日期
-       * @param {Object} param {String} next 下一个日期相差 add:下一天 subtract:上一天
-       * @param {Object} param {Number} previousMatchDistance 距离上一个匹配的日期多少天
-       * @param {Object} param {Object} setting 设置
-       */
-      function comparison ({
-        min = undefined,
-        max = undefined,
-        day = undefined,
-        next = 'add',
-        previousMatchDistance = 0,
-        setting = {}
-      }) {
-        const formated = day.format('YYYY-MM-DD')
-        // 只计算工作日
-        // 今天是工作日
-        if (IS_EXCLUDE(day, setting)) {}
-        else if (previousMatchDistance === 0 || previousMatchDistance === setting.INTERVAL) {
-          let current = {}
-          current[setting.POSITION] = setting.TITLE
-          if (result[formated] === undefined) result[formated] = current
-          else result[formated] = Object.assign({}, result[formated], current)
-          previousMatchDistance = 1
-        }
-        else previousMatchDistance += 1
-        // 判断是否还要继续递归
-        if (next === 'add' && day.isSame(max, 'day')) return
-        if (next === 'subtract' && day.isSame(min, 'day')) return
-        comparison({
-          min,
-          max,
-          day: day[next](1, 'day'),
-          next,
-          previousMatchDistance,
-          setting
-        })
-      }
-      getters.SETTING.PLAN.filter(e => e.ACTIVE).forEach(setting => {
-        const day = dayjs(setting.START)
-        const min = day.startOf('year')
-        const max = day.endOf('year')
-        comparison({ min, max, day, setting, next: 'add' })
-        comparison({ min, max, day, setting, next: 'subtract' })
-      })
-      commit('SET_CACHE_PLAN', result)
-    }
+    // async NAME ({ state, rootState, commit, dispatch, getters, rootGetters }) {
+    // }
   },
   modules: {
   }
