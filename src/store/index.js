@@ -38,16 +38,18 @@ export default new Vuex.Store({
         }
       ],
       DISPLAY: {
-        // 突出周六
-        HIGHLIGHT_SHOW_SATURDAY: true,
-        // 突出非法定节假日的周六
-        HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY: false,
-        // 突出周日
-        HIGHLIGHT_SHOW_SUNDAY: true,
-        // 突出非法定节假日的周日
-        HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY: false,
-        // 突出法定节假日
-        HIGHLIGHT_SHOW_HOLIDAY: true
+        CALENDAR: {
+          // 突出周六
+          HIGHLIGHT_SHOW_SATURDAY: false,
+          // 突出非法定节假日的周六
+          HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY: false,
+          // 突出周日
+          HIGHLIGHT_SHOW_SUNDAY: false,
+          // 突出非法定节假日的周日
+          HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY: false,
+          // 突出法定节假日
+          HIGHLIGHT_SHOW_HOLIDAY: true
+        }
       }
     },
     // 任务计算结果

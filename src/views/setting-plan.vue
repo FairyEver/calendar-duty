@@ -5,17 +5,17 @@
 <template>
   <div class="setting-plan">
     <van-cell-group title="开关">
-      <setting-cell-switch label="开启" path="PLAN[1].ACTIVE"/>
+      <setting-cell-switch label="开启" :path="`PLAN[${index}].ACTIVE`"/>
     </van-cell-group>
     <van-cell-group title="基础信息">
-      <setting-cell-input label="名称" path="PLAN[1].TITLE"/>
-      <setting-cell-input label="日期" path="PLAN[1].START"/>
-      <setting-cell-number label="周期" path="PLAN[1].INTERVAL"/>
+      <setting-cell-input label="名称" :path="`PLAN[${index}].TITLE`"/>
+      <setting-cell-input label="日期" :path="`PLAN[${index}].START`"/>
+      <setting-cell-number label="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">
-      <setting-cell-switch label="排除周六" path="PLAN[1].EXCLUDE_SATURDAY"/>
-      <setting-cell-switch label="排除周日" path="PLAN[1].EXCLUDE_SUNDAY"/>
-      <setting-cell-switch label="排除法定节假日" path="PLAN[1].EXCLUDE_HOLIDAY"/>
+      <setting-cell-switch label="排除周六" :path="`PLAN[${index}].EXCLUDE_SATURDAY`"/>
+      <setting-cell-switch label="排除周日" :path="`PLAN[${index}].EXCLUDE_SUNDAY`"/>
+      <setting-cell-switch label="排除法定节假日" :path="`PLAN[${index}].EXCLUDE_HOLIDAY`"/>
     </van-cell-group>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
     // 页面跳转的时候是数字 直接刷新是字符串
     // indexCheck 方法校验
     index: {
-      default: '1',
+      default: '0',
       required: false
     }
   },
@@ -47,7 +47,7 @@ export default {
           if (isNaN(Number(this.index))) handleError()
         } break
         case 'number': {
-          if (this.index === 0) handleError()
+          if (this.index < 0) handleError()
         } break
         default:
           break
