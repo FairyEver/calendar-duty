@@ -41,6 +41,20 @@ const routes = [
             }
           }
         }
+      },
+      {
+        path: 'setting-display-calendar',
+        name: 'setting-display-calendar',
+        component: () => import('@/views/setting-display-calendar.vue'),
+        meta: {
+          title: '日历显示设置',
+          back: {
+            title: '设置',
+            to: {
+              name: 'setting'
+            }
+          }
+        }
       }
     ]
   }
