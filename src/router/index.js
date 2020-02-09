@@ -55,6 +55,20 @@ const routes = [
             }
           }
         }
+      },
+      {
+        path: 'setting-version',
+        name: 'setting-version',
+        component: () => import('@/views/setting-version.vue'),
+        meta: {
+          title: '版本信息',
+          back: {
+            title: '设置',
+            to: {
+              name: 'setting'
+            }
+          }
+        }
       }
     ]
   }

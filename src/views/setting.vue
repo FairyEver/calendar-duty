@@ -11,7 +11,9 @@
     <van-cell-group title="显示">
       <van-cell title="日历" is-link :to="{ name: 'setting-display-calendar' }"/>
     </van-cell-group>
-    构建于 {{ $env.VUE_APP_BUILD_TIME | timeFormat('YYYY年M月D日 dddd Ah点mm分') }}
+    <van-cell-group title="关于">
+      <van-cell title="版本" is-link :to="{ name: 'setting-version' }"/>
+    </van-cell-group>
   </div>
 </template>
 
