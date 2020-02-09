@@ -4,7 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import persistedState from 'vuex-persistedstate'
 import dayjs from 'dayjs'
-import { isSaturday, isSunday, isHoliday } from '@/util/day.js'
+import { isSaturday, isSunday, isHoliday } from '@/util/time.js'
 import { set } from 'lodash'
 
 Vue.use(Vuex)

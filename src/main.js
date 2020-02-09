@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import pluginEnv from '@/plugin/env'
 import '@/components'
+import '@/filters'
 import '@/assets/style/public.scss'
 
 import 'flex.css'
@@ -28,6 +30,8 @@ Vue.use(Field)
 Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Divider)
+
+Vue.use(pluginEnv)
 
 Vue.config.productionTip = false
 

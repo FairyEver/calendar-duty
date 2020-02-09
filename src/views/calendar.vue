@@ -19,7 +19,7 @@
 
 <script>
 import dayjs from 'dayjs'
-import { isSaturday, isSunday, isHoliday, recalculation } from '@/util/day.js'
+import { isSaturday, isSunday, isHoliday, recalculation } from '@/util/time.js'
 
 const today = dayjs()
 
