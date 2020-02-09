@@ -13,11 +13,10 @@
       <setting-cell-stepper title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">
-      <setting-cell-switch title="排除周六" :path="`PLAN[${index}].EX_SAT`"/>
-      <setting-cell-switch title="排除周日" :path="`PLAN[${index}].EX_SUN`"/>
-      <setting-cell-switch title="排除法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
+      <setting-cell-switch title="排除周六" label="排除所有(包含非法定节假日的)周六" :path="`PLAN[${index}].EX_SAT`"/>
+      <setting-cell-switch title="排除周日" label="排除所有(包含非法定节假日的)周日" :path="`PLAN[${index}].EX_SUN`"/>
+      <setting-cell-switch title="排除法定节假日" label="单独开启此项只排除国家法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
     </van-cell-group>
-    <tips :value="['周六和周日不一定是法定节假日', '法定节假日不仅包含周六和周日']"/>
   </div>
 </template>
 

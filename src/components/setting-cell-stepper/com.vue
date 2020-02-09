@@ -16,7 +16,7 @@ export default {
   mixins: [settingCell],
   data () {
     return {
-      currentValue: 6
+      currentValue: 1
     }
   },
   methods: {
