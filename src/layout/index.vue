@@ -5,6 +5,14 @@
     overflow: auto;
     background-color: #F7F8FA;
   }
+  .layout-calendar--footer {
+    height: 50px !important;
+    // 加粗底栏按钮的文字
+    .van-tabbar-item__text {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
 }
 </style>
 
@@ -18,9 +26,9 @@
     <div class="layout-calendar--main">
       <router-view/>
     </div>
-    <div style="height:50px;">
+    <div class="layout-calendar--footer">
       <van-tabbar route>
-        <van-tabbar-item replace to="/" icon="home-o">首页</van-tabbar-item>
+        <van-tabbar-item replace to="/" icon="calender-o">日历</van-tabbar-item>
         <van-tabbar-item replace to="/setting" icon="setting-o">设置</van-tabbar-item>
       </van-tabbar>
     </div>
