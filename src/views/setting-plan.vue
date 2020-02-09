@@ -10,7 +10,7 @@
     <van-cell-group title="基础信息">
       <setting-cell-input title="名称" :path="`PLAN[${index}].NAME`"/>
       <setting-cell-date title="日期" :path="`PLAN[${index}].DATE`"/>
-      <setting-cell-number title="周期" :path="`PLAN[${index}].INTERVAL`"/>
+      <setting-cell-stepper title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">
       <setting-cell-switch title="排除周六" :path="`PLAN[${index}].EX_SAT`"/>

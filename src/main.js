@@ -18,7 +18,8 @@ import {
   Field,
   Cell,
   CellGroup,
-  Divider
+  Divider,
+  Stepper
 } from 'vant'
 
 Vue.use(Tabbar)
@@ -30,6 +31,7 @@ Vue.use(Field)
 Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Divider)
+Vue.use(Stepper)
 
 Vue.use(pluginEnv)
 
