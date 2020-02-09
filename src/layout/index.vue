@@ -2,24 +2,22 @@
 .layout-calendar {
   height: 100%;
   .layout-calendar--header {
-    .van-nav-bar {
-      height: $headerHeight;
-      line-height: $headerHeight;
-      .van-nav-bar__title {
-        font-size: $headerFontSize;
-        font-weight: $headerFontWeight;
-      }
-      .van-nav-bar__left {
-        font-size: $headerFontSize;
-        font-weight: $headerFontWeight;
-      }
-      .van-nav-bar__right {
-        font-size: $headerFontSize;
-        font-weight: $headerFontWeight;
-      }
-      .van-nav-bar__arrow {
-        font-size: $headerFontSize + 4px;
-      }
+    height: $headerHeight;
+    line-height: $headerHeight;
+    .van-nav-bar__title {
+      font-size: $headerFontSize;
+      font-weight: $headerFontWeight;
+    }
+    .van-nav-bar__left {
+      font-size: $headerFontSize;
+      font-weight: $headerFontWeight;
+    }
+    .van-nav-bar__right {
+      font-size: $headerFontSize;
+      font-weight: $headerFontWeight;
+    }
+    .van-nav-bar__arrow {
+      font-size: $headerFontSize + 4px;
     }
   }
   .layout-calendar--main {
@@ -38,18 +36,17 @@
 </style>
 
 <template>
-  <div class="layout-calendar" flex="dir:top main:justify">
-    <div class="layout-calendar--header" flex-box="0">
-      <van-nav-bar
-        :left-arrow="leftArrow"
-        :left-text="leftText"
-        :title="$route.meta.title"
-        @click-left="onNavbarClickLeft"/>
-    </div>
-    <div class="layout-calendar--main" flex-box="1">
+  <div class="layout-calendar" flex="dir:top main:justify box:justify">
+    <van-nav-bar
+      class="layout-calendar--header"
+      :left-arrow="leftArrow"
+      :left-text="leftText"
+      :title="$route.meta.title"
+      @click-left="onNavbarClickLeft"/>
+    <div class="layout-calendar--main">
       <router-view/>
     </div>
-    <div class="layout-calendar--footer" flex-box="0">
+    <div class="layout-calendar--footer">
       <van-tabbar route>
         <van-tabbar-item replace to="/" icon="calender-o">日历</van-tabbar-item>
         <van-tabbar-item replace to="/setting" icon="setting-o">设置</van-tabbar-item>
