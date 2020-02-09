@@ -36,6 +36,9 @@
       .van-calendar__day {
         font-size: 22px;
         font-weight: 600;
+        .van-calendar__selected-day {
+          height: 70px - 4px;
+        }
         .van-calendar__top-info {
           font-weight: 400;
         }

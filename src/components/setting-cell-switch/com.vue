@@ -3,7 +3,6 @@
     <van-switch
       v-model="currentValue"
       slot="right-icon"
-      size="24"
       @change="commit"/>
   </van-cell>
 </template>

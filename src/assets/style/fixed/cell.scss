@@ -1,0 +1,24 @@
+.van-cell-group__title {
+  font-size: 14px;
+  line-height: 20px;
+}
+.van-cell-group {
+  .van-cell {
+    padding: 14px 20px;
+    .van-cell__title {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 500;
+      .van-cell__label {
+        font-size: 14px;
+      }
+    }
+    .van-icon {
+      font-size: 20px;
+    }
+    .van-cell__value {
+      font-size: 18px;
+      color: #323233;
+    }
+  }
+}

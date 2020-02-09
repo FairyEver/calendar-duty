@@ -25,11 +25,13 @@
     background-color: #F7F8FA;
   }
   .layout-calendar--footer {
-    height: 50px !important;
-    // 加粗底栏按钮的文字
-    .van-tabbar-item__text {
-      font-size: 14px;
-      font-weight: bold;
+    height: 60px !important;
+    .van-tabbar {
+      height: 60px;
+      .van-tabbar-item__text {
+        font-size: 14px;
+        font-weight: bold;
+      }
     }
   }
 }

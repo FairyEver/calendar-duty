@@ -2,6 +2,7 @@
   <van-cell :title="title" :label="label" center>
     <van-stepper
       v-model="currentValue"
+      button-size="38px"
       @change="onChange"
       integer
       disable-input/>
