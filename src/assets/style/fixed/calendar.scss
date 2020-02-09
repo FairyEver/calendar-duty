@@ -9,6 +9,8 @@
       font-size: $headerFontSize;
       font-weight: $headerFontWeight;
       letter-spacing: 1px;
+      @extend .hairline;
+      @extend .hairline--bottom;
     }
     .van-calendar__weekdays {
       .van-calendar__weekday {

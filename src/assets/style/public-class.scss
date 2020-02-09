@@ -17,3 +17,26 @@ $sizes-name: (0, 5, 10, 15, 20);
   .is-pb-#{nth($sizes-name, $index)} { padding-bottom: #{nth($sizes, $index)} !important; }
   .is-pl-#{nth($sizes-name, $index)} { padding-left: #{nth($sizes, $index)} !important; }
 }
+
+.hairline {
+  position: relative;
+  &::after {
+    position: absolute;
+    box-sizing: border-box;
+    content: ' ';
+    pointer-events: none;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    left: -50%;
+    border: 0 solid #ebedf0;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+  }
+}
+
+.hairline--bottom {
+  &::after {
+    border-bottom-width: 1px;
+  }
+}

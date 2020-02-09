@@ -2,22 +2,24 @@
 .layout-calendar {
   height: 100%;
   .layout-calendar--header {
-    height: $headerHeight;
-    line-height: $headerHeight;
-    .van-nav-bar__title {
-      font-size: $headerFontSize;
-      font-weight: $headerFontWeight;
-    }
-    .van-nav-bar__left {
-      font-size: $headerFontSize;
-      font-weight: $headerFontWeight;
-    }
-    .van-nav-bar__right {
-      font-size: $headerFontSize;
-      font-weight: $headerFontWeight;
-    }
-    .van-nav-bar__arrow {
-      font-size: $headerFontSize + 4px;
+    .van-nav-bar {
+      height: $headerHeight;
+      line-height: $headerHeight;
+      .van-nav-bar__title {
+        font-size: $headerFontSize;
+        font-weight: $headerFontWeight;
+      }
+      .van-nav-bar__left {
+        font-size: $headerFontSize;
+        font-weight: $headerFontWeight;
+      }
+      .van-nav-bar__right {
+        font-size: $headerFontSize;
+        font-weight: $headerFontWeight;
+      }
+      .van-nav-bar__arrow {
+        font-size: $headerFontSize + 4px;
+      }
     }
   }
   .layout-calendar--main {
@@ -37,14 +39,14 @@
 
 <template>
   <div class="layout-calendar" flex="dir:top main:justify">
-    <van-nav-bar
-      v-if="$route.meta.header"
-      class="layout-calendar--header"
-      flex-box="0"
-      :left-arrow="leftArrow"
-      :left-text="leftText"
-      :title="$route.meta.title"
-      @click-left="onNavbarClickLeft"/>
+    <div class="layout-calendar--header" flex-box="0">
+      <van-nav-bar
+        v-if="$route.meta.header"
+        :left-arrow="leftArrow"
+        :left-text="leftText"
+        :title="$route.meta.title"
+        @click-left="onNavbarClickLeft"/>
+    </div>
     <div class="layout-calendar--main" flex-box="1">
       <router-view/>
     </div>
