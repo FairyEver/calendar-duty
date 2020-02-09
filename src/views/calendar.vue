@@ -79,15 +79,15 @@ export default {
       const dayIsSunday = isSunday(day)
       const dayIsHoliday = isHoliday(day)
       // (高亮周六 && 是周六) && (是法定节假日 || 不是法定节假日 + 高亮非法定节假日周六)
-      if ((this.setting.HL_SATURDAY && dayIsSaturday) && (dayIsHoliday || this.setting.HL_SATURDAY_N_H)) {
+      if ((this.setting.HL_SAT && dayIsSaturday) && (dayIsHoliday || this.setting.HL_SAT_N_H)) {
         element.className = className
       }
       // (高亮周日 && 是周日) && (是法定节假日 || 不是法定节假日 + 高亮非法定节假日周日)
-      else if ((this.setting.HL_SUNDAY && dayIsSunday) && (dayIsHoliday || this.setting.HL_SUNDAY_N_H)) {
+      else if ((this.setting.HL_SUN && dayIsSunday) && (dayIsHoliday || this.setting.HL_SUN_N_H)) {
         element.className = className
       }
       // 高亮法定节假日 && 是法定节假日
-      else if (this.setting.HL_HOLIDAY && dayIsHoliday) {
+      else if (this.setting.HL_HOL && dayIsHoliday) {
         element.className = className
       }
       return element

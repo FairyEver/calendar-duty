@@ -3,11 +3,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import persistedState from 'vuex-persistedstate'
-import dayjs from 'dayjs'
-import { isSaturday, isSunday, isHoliday } from '@/util/time.js'
 import { set } from 'lodash'
 
 Vue.use(Vuex)
+
+// SUN = SUNDAY
+// SAT = SATURDAY
+// HOL = HOLIDAY
 
 export default new Vuex.Store({
   plugins: [
@@ -15,42 +17,43 @@ export default new Vuex.Store({
   ],
   state: {
     SETTING: {
+      // EX = EXCLUDE
       PLAN: [
         {
           ACTIVE: true,
           TITLE: '上班',
           START: '2020-02-11',
           INTERVAL: 6,
-          POSITION: 'top',
-          EXCLUDE_SATURDAY: false,
-          EXCLUDE_SUNDAY: false,
-          EXCLUDE_HOLIDAY: true
+          P: 'top',
+          EX_SAT: false,
+          EX_SUN: false,
+          EX_HOL: true
         },
         {
           ACTIVE: true,
           TITLE: '执勤',
           START: '2020-02-12',
           INTERVAL: 6,
-          POSITION: 'bottom',
-          EXCLUDE_SATURDAY: false,
-          EXCLUDE_SUNDAY: false,
-          EXCLUDE_HOLIDAY: false
+          P: 'bottom',
+          EX_SAT: false,
+          EX_SUN: false,
+          EX_HOL: false
         }
       ],
       DISPLAY: {
         // HL = HIGHLIGHT_SHOW 高亮显示
-        // N_H = NOT_HOLIDAY 非法定节假日
+        // N_H = NOT_HOL 非法定节假日
         CALENDAR: {
           // 突出周六
-          HL_SATURDAY: false,
+          HL_SAT: false,
           // 突出非法定节假日的周六
-          HL_SATURDAY_N_H: false,
+          HL_SAT_N_H: false,
           // 突出周日
-          HL_SUNDAY: false,
+          HL_SUN: false,
           // 突出非法定节假日的周日
-          HL_SUNDAY_N_H: false,
+          HL_SUN_N_H: false,
           // 突出法定节假日
-          HL_HOLIDAY: true
+          HL_HOL: true
         }
       }
     }

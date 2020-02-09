@@ -13,9 +13,9 @@
       <setting-cell-number title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">
-      <setting-cell-switch title="排除周六" :path="`PLAN[${index}].EXCLUDE_SATURDAY`"/>
-      <setting-cell-switch title="排除周日" :path="`PLAN[${index}].EXCLUDE_SUNDAY`"/>
-      <setting-cell-switch title="排除法定节假日" :path="`PLAN[${index}].EXCLUDE_HOLIDAY`"/>
+      <setting-cell-switch title="排除周六" :path="`PLAN[${index}].EX_SAT`"/>
+      <setting-cell-switch title="排除周日" :path="`PLAN[${index}].EX_SUN`"/>
+      <setting-cell-switch title="排除法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
     </van-cell-group>
     <tips
       :value="[

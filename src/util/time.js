@@ -31,7 +31,7 @@ export function format (value, config = 'YYYY年M月D日') {
 
 /**
  * @description 判断是不是周六
- * @description 用于 EXCLUDE_SATURDAY
+ * @description 用于 EX_SAT
  * @param {Dayjs} day 日期
  * @returns {Boolean} is or not
  */
@@ -41,7 +41,7 @@ export function isSaturday (day) {
 
 /**
  * @description 判断是不是周日
- * @description 用于 EXCLUDE_SUNDAY
+ * @description 用于 EX_SUN
  * @param {Dayjs} day 日期
  * @returns {Boolean} is or not
  */
@@ -51,7 +51,7 @@ export function isSunday (day) {
 
 /**
  * @description 判断是不是工作日
- * @description EXCLUDE_HOLIDAY
+ * @description EX_HOL
  * @param {Dayjs} day 日期
  * @returns {Boolean} is or not
  */
@@ -79,9 +79,9 @@ export function recalculation ({
    * @returns {Boolean} is or not
    */
   function IS_EXCLUDE (day, setting = {}) {
-    if (setting.EXCLUDE_SATURDAY && isSaturday(day)) return true
-    if (setting.EXCLUDE_SUNDAY && isSunday(day)) return true
-    if (setting.EXCLUDE_HOLIDAY && isHoliday(day)) return true
+    if (setting.EX_SAT && isSaturday(day)) return true
+    if (setting.EX_SUN && isSunday(day)) return true
+    if (setting.EX_HOL && isHoliday(day)) return true
     return false
   }
   /**
@@ -105,7 +105,7 @@ export function recalculation ({
     if (IS_EXCLUDE(day, setting)) {}
     else if (previousMatchDistance === 0 || previousMatchDistance === setting.INTERVAL) {
       let current = {}
-      current[setting.POSITION] = setting.TITLE
+      current[setting.P] = setting.TITLE
       if (result[formated] === undefined) result[formated] = current
       else result[formated] = Object.assign({}, result[formated], current)
       previousMatchDistance = 1
