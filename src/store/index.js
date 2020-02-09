@@ -38,17 +38,19 @@ export default new Vuex.Store({
         }
       ],
       DISPLAY: {
+        // HL = HIGHLIGHT_SHOW 高亮显示
+        // N_H = NOT_HOLIDAY 非法定节假日
         CALENDAR: {
           // 突出周六
-          HIGHLIGHT_SHOW_SATURDAY: false,
+          HL_SATURDAY: false,
           // 突出非法定节假日的周六
-          HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY: false,
+          HL_SATURDAY_N_H: false,
           // 突出周日
-          HIGHLIGHT_SHOW_SUNDAY: false,
+          HL_SUNDAY: false,
           // 突出非法定节假日的周日
-          HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY: false,
+          HL_SUNDAY_N_H: false,
           // 突出法定节假日
-          HIGHLIGHT_SHOW_HOLIDAY: true
+          HL_HOLIDAY: true
         }
       }
     }

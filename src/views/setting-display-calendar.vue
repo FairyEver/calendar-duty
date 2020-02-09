@@ -5,15 +5,15 @@
 <template>
   <div class="setting-display-calendar">
     <van-cell-group title="周六">
-      <setting-cell-switch title="高亮周六" path="DISPLAY.CALENDAR.HIGHLIGHT_SHOW_SATURDAY"/>
-      <setting-cell-switch title="高亮非法定节假日的周六" path="DISPLAY.CALENDAR.HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY"/>
+      <setting-cell-switch title="高亮周六" path="DISPLAY.CALENDAR.HL_SATURDAY"/>
+      <setting-cell-switch title="高亮非法定节假日的周六" path="DISPLAY.CALENDAR.HL_SATURDAY_N_H"/>
     </van-cell-group>
     <van-cell-group title="周日">
-      <setting-cell-switch title="高亮周日" path="DISPLAY.CALENDAR.HIGHLIGHT_SHOW_SUNDAY"/>
-      <setting-cell-switch title="高亮非法定节假日的周日" path="DISPLAY.CALENDAR.HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY"/>
+      <setting-cell-switch title="高亮周日" path="DISPLAY.CALENDAR.HL_SUNDAY"/>
+      <setting-cell-switch title="高亮非法定节假日的周日" path="DISPLAY.CALENDAR.HL_SUNDAY_N_H"/>
     </van-cell-group>
     <van-cell-group title="法定节假日">
-      <setting-cell-switch title="高亮法定节假日" path="DISPLAY.CALENDAR.HIGHLIGHT_SHOW_HOLIDAY"/>
+      <setting-cell-switch title="高亮法定节假日" path="DISPLAY.CALENDAR.HL_HOLIDAY"/>
     </van-cell-group>
     <tips
       :value="[
