@@ -8,12 +8,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'index',
     component: layout,
     children: [
       {
         path: '',
-        name: 'calendar',
+        name: 'index',
         component: () => import('@/views/calendar.vue'),
         meta: {
           title: '日历'

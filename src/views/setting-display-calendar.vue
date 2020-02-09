@@ -15,11 +15,7 @@
     <van-cell-group title="法定节假日">
       <setting-cell-switch title="高亮法定节假日" path="DISPLAY.CALENDAR.HL_HOL"/>
     </van-cell-group>
-    <tips
-      :value="[
-        '周六和周日不一定是法定节假日',
-        '法定节假日不仅包含周六和周日'
-      ]"/>
+    <tips :value="['周六和周日不一定是法定节假日', '法定节假日不仅包含周六和周日']"/>
   </div>
 </template>
 

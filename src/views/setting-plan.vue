@@ -9,7 +9,7 @@
     </van-cell-group>
     <van-cell-group title="基础信息">
       <setting-cell-input title="名称" :path="`PLAN[${index}].NAME`"/>
-      <setting-cell-input title="日期" :path="`PLAN[${index}].DATE`"/>
+      <setting-cell-date title="日期" :path="`PLAN[${index}].DATE`"/>
       <setting-cell-number title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">
@@ -17,11 +17,7 @@
       <setting-cell-switch title="排除周日" :path="`PLAN[${index}].EX_SUN`"/>
       <setting-cell-switch title="排除法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
     </van-cell-group>
-    <tips
-      :value="[
-        '周六和周日不一定是法定节假日',
-        '法定节假日不仅包含周六和周日'
-      ]"/>
+    <tips :value="['周六和周日不一定是法定节假日', '法定节假日不仅包含周六和周日']"/>
   </div>
 </template>
 
