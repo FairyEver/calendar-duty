@@ -1,0 +1,36 @@
+// 400 等同于 normal，而 700 等同于 600
+
+.van-calendar {
+  // 顶部
+  .van-calendar__header {
+    .van-calendar__month-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .van-calendar__weekdays {
+      .van-calendar__weekday {
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+  // 主体
+  .van-calendar__body {
+    .van-calendar__month {
+      .van-calendar__month-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .van-calendar__day {
+        font-size: 18px;
+        font-weight: 600;
+        .van-calendar__top-info {
+          font-weight: 400;
+        }
+        .van-calendar__bottom-info {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
