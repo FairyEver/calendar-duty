@@ -19,12 +19,14 @@
 
 <script>
 import dayjs from 'dayjs'
-import { isSaturday, isSunday, isHoliday } from '@/util/day.js'
+import { isSaturday, isSunday, isHoliday, recalculation } from '@/util/day.js'
 
 const today = dayjs()
 
-const start = today.startOf('year').toDate()
-const end = today.endOf('year').toDate()
+// 日历显示需要
+// 计算计划安排需要
+const minDate = today.startOf('year').toDate()
+const maxDate = today.endOf('year').toDate()
 
 export default {
   name: 'page-index',
@@ -37,8 +39,8 @@ export default {
         poppable: false,
         showConfirm: false,
         defaultDate: today.toDate(),
-        minDate: start,
-        maxDate: end
+        minDate: minDate,
+        maxDate: maxDate
       }
     }
   },
@@ -48,77 +50,17 @@ export default {
     }
   },
   created () {
-    // 重新计算计划缓存
-    this.recalculation()
+    // 计算计划日期安排到缓存
+    this.cache = recalculation({
+      plan: this.$store.getters['SETTING'].PLAN,
+      minDate: minDate,
+      maxDate: maxDate
+    })
   },
   methods: {
     /**
-     * @description 重新计算计划缓存
+     * @description 日历组件的格式化方法
      */
-    recalculation () {
-      const result = {}
-      /**
-       * @description 判断日期是否需要排除
-       * @param {Dayjs} day 日期
-       * @param {Object} setting 设置
-       * @returns {Boolean} is or not
-       */
-      function IS_EXCLUDE (day, setting = {}) {
-        if (setting.EXCLUDE_SATURDAY && isSaturday(day)) return true
-        if (setting.EXCLUDE_SUNDAY && isSunday(day)) return true
-        if (setting.EXCLUDE_HOLIDAY && isHoliday(day)) return true
-        return false
-      }
-      /**
-       * @description 计算一个日期
-       * @param {Object} param {Dayjs} min 最小日期
-       * @param {Object} param {Dayjs} max 最大日期
-       * @param {Object} param {Dayjs} day 当前日期
-       * @param {Object} param {String} next 下一个日期相差 add:下一天 subtract:上一天
-       * @param {Object} param {Number} previousMatchDistance 距离上一个匹配的日期多少天
-       * @param {Object} param {Object} setting 设置
-       */
-      function comparison ({
-        min = undefined,
-        max = undefined,
-        day = undefined,
-        next = 'add',
-        previousMatchDistance = 0,
-        setting = {}
-      }) {
-        const formated = day.format('YYYY-MM-DD')
-        // 只计算工作日
-        // 今天是工作日
-        if (IS_EXCLUDE(day, setting)) {}
-        else if (previousMatchDistance === 0 || previousMatchDistance === setting.INTERVAL) {
-          let current = {}
-          current[setting.POSITION] = setting.TITLE
-          if (result[formated] === undefined) result[formated] = current
-          else result[formated] = Object.assign({}, result[formated], current)
-          previousMatchDistance = 1
-        }
-        else previousMatchDistance += 1
-        // 判断是否还要继续递归
-        if (next === 'add' && day.isSame(max, 'day')) return
-        if (next === 'subtract' && day.isSame(min, 'day')) return
-        comparison({
-          min,
-          max,
-          day: day[next](1, 'day'),
-          next,
-          previousMatchDistance,
-          setting
-        })
-      }
-      this.$store.getters['SETTING'].PLAN.filter(e => e.ACTIVE).forEach(setting => {
-        const day = dayjs(setting.START)
-        const min = day.startOf('year')
-        const max = day.endOf('year')
-        comparison({ min, max, day, setting, next: 'add' })
-        comparison({ min, max, day, setting, next: 'subtract' })
-      })
-      this.cache = result
-    },
     formatter (element) {
       const day = dayjs(element.date)
       const formated = day.format('YYYY-MM-DD')
