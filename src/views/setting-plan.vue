@@ -17,11 +17,11 @@
       <setting-cell-switch title="排除周日" :path="`PLAN[${index}].EXCLUDE_SUNDAY`"/>
       <setting-cell-switch title="排除法定节假日" :path="`PLAN[${index}].EXCLUDE_HOLIDAY`"/>
     </van-cell-group>
-    <van-divider dashed>提示</van-divider>
-    <van-cell-group class="is-mb-20">
-      <van-cell value="周六和周日不一定是法定节假日"/>
-      <van-cell value="法定节假日不仅包含周六和周日"/>
-    </van-cell-group>
+    <tips
+      :value="[
+        '周六和周日不一定是法定节假日',
+        '法定节假日不仅包含周六和周日'
+      ]"/>
   </div>
 </template>
 
