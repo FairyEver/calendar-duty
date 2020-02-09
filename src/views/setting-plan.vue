@@ -5,11 +5,11 @@
 <template>
   <div class="setting-plan">
     <van-cell-group title="开关">
-      <setting-cell-switch title="开启" :path="`PLAN[${index}].ACTIVE`"/>
+      <setting-cell-switch title="开启" :path="`PLAN[${index}].ACT`"/>
     </van-cell-group>
     <van-cell-group title="基础信息">
-      <setting-cell-input title="名称" :path="`PLAN[${index}].TITLE`"/>
-      <setting-cell-input title="日期" :path="`PLAN[${index}].START`"/>
+      <setting-cell-input title="名称" :path="`PLAN[${index}].NAME`"/>
+      <setting-cell-input title="日期" :path="`PLAN[${index}].DATE`"/>
       <setting-cell-number title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
     <van-cell-group title="排除设置">

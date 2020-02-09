@@ -23,10 +23,6 @@ import { isSaturday, isSunday, isHoliday, recalculation } from '@/util/time.js'
 
 const today = dayjs()
 
-console.log(today.utcOffset())
-
-// 日历显示需要
-// 计算计划安排需要
 const minDate = today.startOf('year').toDate()
 const maxDate = today.endOf('year').toDate()
 

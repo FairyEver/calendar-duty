@@ -20,9 +20,9 @@ export default new Vuex.Store({
       // EX = EXCLUDE
       PLAN: [
         {
-          ACTIVE: true,
-          TITLE: '上班',
-          START: '2020-02-11',
+          ACT: true,
+          NAME: '上班',
+          DATE: '2020-02-11',
           INTERVAL: 6,
           P: 'top',
           EX_SAT: false,
@@ -30,9 +30,9 @@ export default new Vuex.Store({
           EX_HOL: true
         },
         {
-          ACTIVE: true,
-          TITLE: '执勤',
-          START: '2020-02-12',
+          ACT: true,
+          NAME: '执勤',
+          DATE: '2020-02-12',
           INTERVAL: 6,
           P: 'bottom',
           EX_SAT: false,

@@ -105,7 +105,7 @@ export function recalculation ({
     if (IS_EXCLUDE(day, setting)) {}
     else if (previousMatchDistance === 0 || previousMatchDistance === setting.INTERVAL) {
       let current = {}
-      current[setting.P] = setting.TITLE
+      current[setting.P] = setting.NAME
       if (result[formated] === undefined) result[formated] = current
       else result[formated] = Object.assign({}, result[formated], current)
       previousMatchDistance = 1
@@ -121,8 +121,8 @@ export function recalculation ({
       setting
     })
   }
-  plan.filter(e => e.ACTIVE).forEach(setting => {
-    const day = dayjs(setting.START)
+  plan.filter(e => e.ACT).forEach(setting => {
+    const day = dayjs(setting.DATE)
     comparison({ day, setting, next: 'add' })
     comparison({ day, setting, next: 'subtract' })
   })
