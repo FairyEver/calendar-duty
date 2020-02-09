@@ -11,5 +11,13 @@ module.exports = {
   lintOnSave: true,
   devServer: {
     publicPath
+  },
+  css: {
+    loaderOptions: {
+      // 设置 scss 公用变量文件
+      sass: {
+        prependData: `@import '~@/assets/style/public.scss';`
+      }
+    }
   }
 }

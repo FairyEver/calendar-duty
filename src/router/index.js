@@ -23,7 +23,8 @@ const routes = [
         name: 'setting',
         component: () => import('@/views/setting.vue'),
         meta: {
-          title: '设置'
+          title: '设置',
+          header: true
         }
       },
       {
@@ -33,6 +34,7 @@ const routes = [
         props: true,
         meta: {
           title: '任务设置',
+          header: true,
           back: {
             title: '设置',
             to: {
@@ -47,6 +49,7 @@ const routes = [
         component: () => import('@/views/setting-display-calendar.vue'),
         meta: {
           title: '日历显示设置',
+          header: true,
           back: {
             title: '设置',
             to: {
@@ -61,6 +64,7 @@ const routes = [
         component: () => import('@/views/setting-version.vue'),
         meta: {
           title: '版本信息',
+          header: true,
           back: {
             title: '设置',
             to: {

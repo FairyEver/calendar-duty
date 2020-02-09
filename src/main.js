@@ -5,7 +5,7 @@ import store from './store'
 import pluginEnv from '@/plugin/env'
 import '@/components'
 import '@/filters'
-import '@/assets/style/public.scss'
+import '@/assets/style/public-class.scss'
 
 import 'flex.css'
 

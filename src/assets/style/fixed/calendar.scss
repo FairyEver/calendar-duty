@@ -4,9 +4,11 @@
   // 顶部
   .van-calendar__header {
     .van-calendar__month-title {
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      height: $headerHeight;
+      line-height: $headerHeight;
+      font-size: $headerFontSize;
+      font-weight: $headerFontWeight;
+      letter-spacing: 1px;
     }
     .van-calendar__weekdays {
       .van-calendar__weekday {
@@ -18,10 +20,16 @@
   // 主体
   .van-calendar__body {
     .van-calendar__month {
+      margin-bottom: 20px;
+      .van-calendar__month-mark {
+        color: rgba(#000, .05);
+        font-weight: 900;
+      }
       .van-calendar__month-title {
         font-size: 20px;
         font-weight: 600;
         letter-spacing: 2px;
+        margin-bottom: 20px;
       }
       .van-calendar__day {
         font-size: 22px;
