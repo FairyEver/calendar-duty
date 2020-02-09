@@ -73,39 +73,20 @@ export default {
         element.bottomInfo = info.bottom
       }
       // [ 假期突出显示 ]
-      // function isSaturday
-      // function isSunday
-      // function isHoliday
-      // - 突出周六
-      // - HIGHLIGHT_SHOW_SATURDAY
-      // - 突出非法定节假日的周六
-      // - HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY
-      // - 突出周日
-      // - HIGHLIGHT_SHOW_SUNDAY
-      // - 突出非法定节假日的周日
-      // - HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY
-      // - 突出法定节假日
-      // - HIGHLIGHT_SHOW_HOLIDAY
       let highlight = false
       const className = 'is-holiday'
       const dayIsSaturday = isSaturday(day)
       const dayIsSunday = isSunday(day)
       const dayIsHoliday = isHoliday(day)
-      // 周六
-      if (this.settingCalendar.HIGHLIGHT_SHOW_SATURDAY && dayIsSaturday) {
-        // 这天也是法定节假日 || 这天不是法定节假日 + 设置了高亮非法定节假日的周六
-        if (dayIsHoliday || this.settingCalendar.HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY) {
-          element.className = className
-        }
+      // (高亮周六 && 是周六) && (是法定节假日 || 不是法定节假日 + 高亮非法定节假日周六)
+      if ((this.settingCalendar.HIGHLIGHT_SHOW_SATURDAY && dayIsSaturday) && (dayIsHoliday || this.settingCalendar.HIGHLIGHT_SHOW_SATURDAY_NOT_HOLIDAY)) {
+        element.className = className
       }
-      // 周日
-      else if (this.settingCalendar.HIGHLIGHT_SHOW_SUNDAY && dayIsSunday) {
-        // 这天也是法定节假日 || 这天不是法定节假日 + 设置了高亮非法定节假日的周日
-        if (dayIsHoliday || this.settingCalendar.HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY) {
-          element.className = className
-        }
+      // (高亮周日 && 是周日) && (是法定节假日 || 不是法定节假日 + 高亮非法定节假日周日)
+      else if ((this.settingCalendar.HIGHLIGHT_SHOW_SUNDAY && dayIsSunday) && (dayIsHoliday || this.settingCalendar.HIGHLIGHT_SHOW_SUNDAY_NOT_HOLIDAY)) {
+        element.className = className
       }
-      // 法定节假日 日历中间的五列
+      // 高亮法定节假日 && 是法定节假日
       else if (this.settingCalendar.HIGHLIGHT_SHOW_HOLIDAY && dayIsHoliday) {
         element.className = className
       }
