@@ -14,6 +14,7 @@
   <van-calendar
     class="page-index"
     :formatter="formatter"
+    :row-height="100"
     v-bind="calendar"/>
 </template>
 

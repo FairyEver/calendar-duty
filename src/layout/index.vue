@@ -41,7 +41,6 @@
   <div class="layout-calendar" flex="dir:top main:justify">
     <div class="layout-calendar--header" flex-box="0">
       <van-nav-bar
-        v-if="$route.meta.header"
         :left-arrow="leftArrow"
         :left-text="leftText"
         :title="$route.meta.title"
