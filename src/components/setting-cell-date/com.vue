@@ -1,6 +1,9 @@
 <template>
   <div class="setting-cell-date">
-    <van-cell :title="title" :value="currentValue" @click="openCalendar"/>
+    <van-cell
+      :title="title"
+      :value="currentValue"
+      @click="open"/>
     <!-- 这里的空 div 是为了解决下边框丢失问题 -->
     <div></div>
     <van-calendar
@@ -8,7 +11,7 @@
       v-model="calendar.show"
       v-bind="calendar"
       :default-date="calendarDefaultDate"
-      @confirm="onCalendarConfirm"/>
+      @confirm="confirm"/>
   </div>
 </template>
 
@@ -43,7 +46,7 @@ export default {
     /**
      * @description 打开日历
      */
-    openCalendar () {
+    open () {
       this.calendar.show = true
       this.$nextTick(() => {
         this.resetCalendar()
@@ -52,7 +55,7 @@ export default {
     /**
      * @description 关闭日历
      */
-    closeCalendar () {
+    close () {
       this.calendar.show = false
     },
     /**
@@ -63,13 +66,13 @@ export default {
       if (calendar) calendar.reset()
     },
     /**
-     * @description 日历选择点击确定按钮
+     * @description 点击确定按钮
      */
-    onCalendarConfirm (date) {
-      const formated = dayjs(date).format('YYYY-MM-DD')
+    confirm (data) {
+      const formated = dayjs(data).format('YYYY-MM-DD')
       this.currentValue = formated
       this.commit(this.currentValue)
-      this.closeCalendar()
+      this.close()
     }
   }
 }

@@ -19,7 +19,9 @@ import {
   Cell,
   CellGroup,
   Divider,
-  Stepper
+  Stepper,
+  Popup,
+  Picker
 } from 'vant'
 
 Vue.use(Tabbar)
@@ -32,6 +34,8 @@ Vue.use(Cell)
 Vue.use(CellGroup)
 Vue.use(Divider)
 Vue.use(Stepper)
+Vue.use(Popup)
+Vue.use(Picker)
 
 Vue.use(pluginEnv)
 

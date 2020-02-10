@@ -17,6 +17,9 @@
       <setting-cell-switch title="排除周日" label="排除所有(包含非法定节假日的)周日" :path="`PLAN[${index}].EX_SUN`"/>
       <setting-cell-switch title="排除法定节假日" label="单独开启此项只排除国家法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
     </van-cell-group>
+    <van-cell-group title="显示">
+      <setting-cell-picker title="位置" :path="`PLAN[${index}].P`" :picker-options="optionsP"/>
+    </van-cell-group>
   </div>
 </template>
 
@@ -31,6 +34,14 @@ export default {
     index: {
       default: '0',
       required: false
+    }
+  },
+  data () {
+    return {
+      optionsP: [
+        { label: '日期数字之上', value: 'top' },
+        { label: '日期数字之下', value: 'bottom' }
+      ]
     }
   },
   created () {
