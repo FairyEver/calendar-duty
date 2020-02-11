@@ -6,7 +6,7 @@
 
 <template>
   <div class="setting-display-calendar">
-    <van-cell-group title="显示范围">
+    <van-cell-group title="范围">
       <setting-cell-switch title="从当前月开始" label="关闭此选项将展示当月之前的日期" path="START_FROM_CURRENT_MONTH"/>
       <setting-cell-switch title="结束于当前月" label="关闭此选项将展示当月之后的日期" path="END_AT_CURRENT_MONTH"/>
     </van-cell-group>

@@ -9,19 +9,19 @@
     <van-cell-group title="开关">
       <setting-cell-switch title="开启" :path="`PLAN[${index}].ACT`"/>
     </van-cell-group>
-    <van-cell-group title="基础信息">
+    <van-cell-group title="基础">
       <setting-cell-input title="名称" :path="`PLAN[${index}].NAME`"/>
       <setting-cell-date title="日期" :path="`PLAN[${index}].DATE`"/>
       <setting-cell-stepper title="周期" :path="`PLAN[${index}].INTERVAL`"/>
     </van-cell-group>
-    <van-cell-group title="排除设置">
-      <setting-cell-switch title="排除周六" label="排除所有(包含非法定节假日的)周六" :path="`PLAN[${index}].EX_SAT`"/>
-      <setting-cell-switch title="排除周日" label="排除所有(包含非法定节假日的)周日" :path="`PLAN[${index}].EX_SUN`"/>
-      <setting-cell-switch title="排除法定节假日" label="单独开启此项只排除国家法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
-    </van-cell-group>
     <van-cell-group title="显示">
       <setting-cell-picker title="位置" :path="`PLAN[${index}].P`" :picker-options="optionsP"/>
       <setting-cell-picker title="颜色" :path="`PLAN[${index}].C`" :picker-options="optionsC"/>
+    </van-cell-group>
+    <van-cell-group title="排除">
+      <setting-cell-switch title="排除周六" label="排除所有(包含非法定节假日的)周六" :path="`PLAN[${index}].EX_SAT`"/>
+      <setting-cell-switch title="排除周日" label="排除所有(包含非法定节假日的)周日" :path="`PLAN[${index}].EX_SUN`"/>
+      <setting-cell-switch title="排除法定节假日" label="单独开启此项只排除国家法定节假日" :path="`PLAN[${index}].EX_HOL`"/>
     </van-cell-group>
   </div>
 </template>
