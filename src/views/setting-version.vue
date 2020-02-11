@@ -1,5 +1,7 @@
 <style lang="scss">
-.setting-version {}
+.setting-version {
+  padding-bottom: 20px;
+}
 </style>
 
 <template>

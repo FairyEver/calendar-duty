@@ -1,5 +1,7 @@
 <style lang="scss">
-.setting-plan {}
+.setting-plan {
+  padding-bottom: 20px;
+}
 </style>
 
 <template>

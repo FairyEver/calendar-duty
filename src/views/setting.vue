@@ -1,5 +1,7 @@
 <style lang="scss">
-.setting {}
+.setting {
+  padding-bottom: 20px;
+}
 </style>
 
 <template>

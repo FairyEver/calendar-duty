@@ -1,5 +1,7 @@
 <style lang="scss">
-.setting-display-calendar {}
+.setting-display-calendar {
+  padding-bottom: 20px;
+}
 </style>
 
 <template>
