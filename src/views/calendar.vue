@@ -77,6 +77,10 @@ export default {
           classNameArray.push(`is-bottom-${info['bottom-color']}`)
         }
       }
+      // [ 今天 ]
+      if (today.isSame(day, 'date')) {
+        classNameArray.push('is-today')
+      }
       // [ 假期突出显示 ]
       let highlight = false
       const className = 'is-holiday'

@@ -47,14 +47,18 @@
             &.is-#{nth($positions, $positionIndex)}-#{nth($colorNames, $colorIndex)} {
               .van-calendar__#{nth($positions, $positionIndex)}-info {
                 background-color: #{nth($colors, $colorIndex)};
-                // color: #{nth($colors, $colorIndex)};
                 color: #FFF;
               }
             }
           }
         }
-        .van-calendar__selected-day {
-          height: 70px - 4px;
+        &.is-today {
+          background-color: #EC132D;
+          border-radius: 4px;
+          color: #FFF;
+          .van-calendar__selected-day {
+            color: #FFF;
+          }
           .van-calendar__top-info {
             background-color: #FFF;
             color: #EC132D;
@@ -63,6 +67,12 @@
             background-color: #FFF;
             color: #EC132D;
           }
+        }
+        .van-calendar__selected-day {
+          height: 70px - 4px;
+          border: 2px solid #EC132D;
+          background-color: transparent;
+          color: #000;
         }
         .van-calendar__top-info {
           font-weight: 450;
