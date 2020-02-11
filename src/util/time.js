@@ -106,6 +106,7 @@ export function recalculation ({
     else if (previousMatchDistance === 0 || previousMatchDistance === setting.INTERVAL) {
       let current = {}
       current[setting.P] = setting.NAME
+      current[`${setting.P}-color`] = setting.C
       if (result[formated] === undefined) result[formated] = current
       else result[formated] = Object.assign({}, result[formated], current)
       previousMatchDistance = 1

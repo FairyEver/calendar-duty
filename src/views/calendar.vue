@@ -65,10 +65,17 @@ export default {
       const day = dayjs(element.date)
       const formated = day.format('YYYY-MM-DD')
       const info = this.cache[formated]
+      let classNameArray = []
       // [ 计划显示 ]
       if (info) {
-        element.topInfo = info.top
-        element.bottomInfo = info.bottom
+        if (info.top) {
+          element.topInfo = info.top
+          classNameArray.push(`is-top-${info['top-color']}`)
+        }
+        if (info.bottom) {
+          element.bottomInfo = info.bottom
+          classNameArray.push(`is-bottom-${info['bottom-color']}`)
+        }
       }
       // [ 假期突出显示 ]
       let highlight = false
@@ -78,15 +85,21 @@ export default {
       const dayIsHoliday = isHoliday(day)
       // (高亮周六 && 是周六) && (是法定节假日 || 不是法定节假日 + 高亮非法定节假日周六)
       if ((this.setting.HL_SAT && dayIsSaturday) && (dayIsHoliday || this.setting.HL_SAT_N_H)) {
-        element.className = className
+        classNameArray.push('is-holiday')
+        element.className = classNameArray.join(' ')
       }
       // (高亮周日 && 是周日) && (是法定节假日 || 不是法定节假日 + 高亮非法定节假日周日)
       else if ((this.setting.HL_SUN && dayIsSunday) && (dayIsHoliday || this.setting.HL_SUN_N_H)) {
-        element.className = className
+        classNameArray.push('is-holiday')
+        element.className = classNameArray.join(' ')
       }
       // 高亮法定节假日 && 是法定节假日
       else if (this.setting.HL_HOL && dayIsHoliday) {
-        element.className = className
+        classNameArray.push('is-holiday')
+        element.className = classNameArray.join(' ')
+      }
+      else {
+        element.className = classNameArray.join(' ')
       }
       return element
     }

@@ -21,12 +21,14 @@
     </van-cell-group>
     <van-cell-group title="显示">
       <setting-cell-picker title="位置" :path="`PLAN[${index}].P`" :picker-options="optionsP"/>
+      <setting-cell-picker title="颜色" :path="`PLAN[${index}].C`" :picker-options="optionsC"/>
     </van-cell-group>
   </div>
 </template>
 
 <script>
 import { isNaN } from 'lodash'
+import setting from '@/setting.js'
 export default {
   name: 'setting-plan',
   props: {
@@ -43,7 +45,8 @@ export default {
       optionsP: [
         { label: '日期数字之上', value: 'top' },
         { label: '日期数字之下', value: 'bottom' }
-      ]
+      ],
+      optionsC: setting.colors
     }
   },
   created () {

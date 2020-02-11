@@ -39,14 +39,44 @@
       .van-calendar__day {
         font-size: 22px;
         font-weight: 600;
+        $positions: ('top', 'bottom');
+        $colorNames: ('green', 'yellow', 'orange', 'red', 'black', 'violet', 'blue');
+        $colors: (#56B14A, #e8c700, #ff8800, #DA3736, #000000, #675996, #389DFC);
+        @for $positionIndex from 1 to 3 {
+          @for $colorIndex from 1 to 8 {
+            &.is-#{nth($positions, $positionIndex)}-#{nth($colorNames, $colorIndex)} {
+              .van-calendar__#{nth($positions, $positionIndex)}-info {
+                background-color: #{nth($colors, $colorIndex)};
+                // color: #{nth($colors, $colorIndex)};
+                color: #FFF;
+              }
+            }
+          }
+        }
         .van-calendar__selected-day {
           height: 70px - 4px;
+          .van-calendar__top-info {
+            background-color: #FFF;
+            color: #EC132D;
+          }
+          .van-calendar__bottom-info {
+            background-color: #FFF;
+            color: #EC132D;
+          }
         }
         .van-calendar__top-info {
-          font-weight: 400;
+          font-weight: 450;
+          left: auto;
+          right: auto;
+          padding: 1px 3px;
+          border-radius: 2px;
         }
         .van-calendar__bottom-info {
-          font-weight: 400;
+          font-weight: 450;
+          left: auto;
+          right: auto;
+          padding: 1px 2px;
+          border-radius: 2px;
         }
       }
     }

@@ -25,6 +25,7 @@ export default new Vuex.Store({
           DATE: '2020-02-11',
           INTERVAL: 6,
           P: 'top',
+          C: 'red',
           EX_SAT: false,
           EX_SUN: false,
           EX_HOL: true
@@ -35,6 +36,7 @@ export default new Vuex.Store({
           DATE: '2020-02-12',
           INTERVAL: 6,
           P: 'bottom',
+          C: 'blue',
           EX_SAT: false,
           EX_SUN: false,
           EX_HOL: false
