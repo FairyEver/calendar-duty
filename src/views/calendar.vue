@@ -16,6 +16,8 @@
     :formatter="formatter"
     :row-height="70"
     :safe-area-inset-bottom="false"
+    :min-date="minDate"
+    :max-date="maxDate"
     v-bind="calendar"/>
 </template>
 
@@ -24,9 +26,6 @@ import dayjs from 'dayjs'
 import { isSaturday, isSunday, isHoliday, recalculation } from '@/util/time.js'
 
 const today = dayjs()
-
-const minDate = today.startOf('year').toDate()
-const maxDate = today.endOf('year').toDate()
 
 export default {
   name: 'page-index',
@@ -38,23 +37,33 @@ export default {
       calendar: {
         poppable: false,
         showConfirm: false,
-        defaultDate: today.toDate(),
-        minDate: minDate,
-        maxDate: maxDate
+        defaultDate: today.toDate()
       }
     }
   },
   computed: {
     setting () {
       return this.$store.getters['SETTING'].DISPLAY.CALENDAR
+    },
+    minDate () {
+      if (this.$store.getters['SETTING'].START_FROM_CURRENT_MONTH) {
+        return today.startOf('month').toDate()
+      }
+      return today.startOf('year').toDate()
+    },
+    maxDate () {
+      if (this.$store.getters['SETTING'].END_AT_CURRENT_MONTH) {
+        return today.endOf('month').toDate()
+      }
+      return today.endOf('year').toDate()
     }
   },
   created () {
     // 计算计划日期安排到缓存
     this.cache = recalculation({
       plan: this.$store.getters['SETTING'].PLAN,
-      minDate: minDate,
-      maxDate: maxDate
+      minDate: this.minDate,
+      maxDate: this.maxDate
     })
   },
   methods: {

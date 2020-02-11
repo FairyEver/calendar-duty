@@ -6,6 +6,10 @@
 
 <template>
   <div class="setting-display-calendar">
+    <van-cell-group title="显示范围">
+      <setting-cell-switch title="从当前月开始" label="关闭此选项将会展示当月之前的计划安排" path="START_FROM_CURRENT_MONTH"/>
+      <setting-cell-switch title="结束于当前月" label="关闭此选项将会展示当月之后的计划安排" path="END_AT_CURRENT_MONTH"/>
+    </van-cell-group>
     <van-cell-group title="周六">
       <setting-cell-switch title="高亮周六" path="DISPLAY.CALENDAR.HL_SAT"/>
       <setting-cell-switch title="高亮非法定节假日的周六" path="DISPLAY.CALENDAR.HL_SAT_N_H"/>

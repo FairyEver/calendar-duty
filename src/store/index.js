@@ -17,6 +17,10 @@ export default new Vuex.Store({
   ],
   state: {
     SETTING: {
+      // 日历从当前月开始
+      START_FROM_CURRENT_MONTH: true,
+      // 日历结束于当前月
+      END_AT_CURRENT_MONTH: false,
       // EX = EXCLUDE
       PLAN: [
         {
