@@ -113,8 +113,8 @@ export function recalculation ({
     }
     else previousMatchDistance += 1
     // 判断是否还要继续递归
-    if (next === 'add' && day.isSame(maxDate, 'day')) return
-    if (next === 'subtract' && day.isSame(minDate, 'day')) return
+    if (next === 'add' && day.isAfter(maxDate, 'day')) return
+    if (next === 'subtract' && day.isBefore(minDate, 'day')) return
     comparison({
       day: day[next](1, 'day'),
       next,
